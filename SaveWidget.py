@@ -1,5 +1,5 @@
 from PyQt6.QtWidgets import QWidget, QLabel, QPushButton, QHBoxLayout, QVBoxLayout, QApplication, QSizePolicy
-from PyQt6.QtGui import QPixmap
+from PyQt6.QtGui import QPixmap, QFont
 import sys
 from typing import overload
 
@@ -27,12 +27,16 @@ class SaveWidget(QWidget):
 
         # метки
         self.icon = QLabel(self)
+
         self.name = QLabel(name, self)
-        self.last_saves = QLabel('Сохранений пока не было', self)
+
+        self.last_saves = QLabel('Сохранений\nпока\nне было', self)
+        self.last_saves.setFont(QFont('Comic Sans', 10))
+        self.last_saves.setStyleSheet('color: gray')
 
         #иконка
-        self.icon.setPixmap(QPixmap(icon_path))
-        self.icon.setSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
+        self.icon.setPixmap(QPixmap(icon_path).scaled(64, 64))
+        self.icon.setSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
         self.icon.setScaledContents(True)
 
         # кнопки
