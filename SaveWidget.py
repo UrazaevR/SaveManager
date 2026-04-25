@@ -29,6 +29,7 @@ class SaveWidget(QWidget):
         self.icon = QLabel(self)
 
         self.name = QLabel(name, self)
+        self.name.setFont(QFont('Comic Sans', 12))
 
         self.last_saves = QLabel('Сохранений\nпока\nне было', self)
         self.last_saves.setFont(QFont('Comic Sans', 10))
@@ -69,6 +70,6 @@ class SaveWidget(QWidget):
         
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    widget = SaveWidget(None, 'Новое сохранение', 'default_icon.ico')
+    widget = SaveWidget(None, 'ELDEN RING', 'default_icon.ico')
     widget.show()
     app.exec()
