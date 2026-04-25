@@ -5,6 +5,7 @@ __pycache__/
 
 #my ignores
 new.py
+доска.png
 
 # C extensions
 *.so
